@@ -79,7 +79,7 @@ namespace GreenLight
                 Console.WriteLine(x.ToString());
             }
 
-            return new DrivingLane(_lanePoints); 
+            return new DrivingLane(_lanePoints, this.dir); 
         }
 
         private int GetDirection(Point _point1, Point _point2)

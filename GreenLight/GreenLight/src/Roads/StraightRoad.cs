@@ -68,7 +68,7 @@ namespace GreenLight
                 }
             }
 
-            return new DrivingLane(_lanePoints);
+            return new DrivingLane(_lanePoints, this.dir);
 
             foreach (LanePoints x in _lanePoints)
             {

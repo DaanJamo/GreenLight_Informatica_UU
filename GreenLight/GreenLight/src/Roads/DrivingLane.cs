@@ -17,25 +17,67 @@ namespace GreenLight
 
 
         public List<LanePoints> points;
+        string dir;
         Bitmap Lane;
         Bitmap Verticallane;
 
-        public DrivingLane(List<LanePoints> _points)
+        public DrivingLane(List<LanePoints> _points, string _dir)
         {
             this.points = _points;
+            this.dir = _dir;
             Lane = new Bitmap(Properties.Resources.Lane);
             Verticallane = new Bitmap(Properties.Resources.Road_Verticaal);
         }
 
         public void Draw(Graphics g)
         {
-            try
+            Pen p = new Pen(Color.Gray, 40);
+            Pen pb = new Pen(Color.Black, 1);
+            double rc, invrc;
+            if (dir.Length > 1)
             {
+
+            }
+            else
+            {
+                g.DrawLine(p, points[0].cord, points[points.Count - 1].cord);
+                rc = Math.Abs(points[0].cord.Y - points[points.Count - 1].cord.Y) / Math.Abs(points[0].cord.X - points[points.Count - 1].cord.X);
+                invrc = -1 / rc;
+                g.DrawLine(pb, Math.Min(points[0].cord.X, points[points.Count - 1].cord.X), points[0].cord.Y - 20, points[points.Count - 1].cord.X, points[points.Count - 1].cord.Y - 20);
+            }
+
+            Point[] _pointsarray = new Point[points.Count];
+            int t = 0;
+            foreach (LanePoints x in points)
+            {
+                _pointsarray[t] = x.cord;
+                t++;
+            }
+            
+            //g.DrawArc(p, _pointtemp.X, _pointtemp.Y - 20, Math.Abs(_pointtemp.X - x.cord.X), 40, 0, x.degree);
+            //g.DrawCurve(p, _pointsarray);
+
+            try
+                {
                 Point _pointtemp = points[0].cord;
 
                 foreach (LanePoints x in points)
+<<<<<<< HEAD
+            {
+                    //g.DrawRectangle(Pens.Black, _pointtemp.X, _pointtemp.Y - 20, Math.Abs(_pointtemp.X - x.cord.X), 40);
+                    g.DrawImage(Lane, _pointtemp.X, _pointtemp.Y - 20, Math.Abs(_pointtemp.X - x.cord.X), 40);
+                    
+                    //g.DrawLine(Pens.Red, _pointtemp, x.cord);
+                    // g.FillEllipse(Brushes.Gray, _pointtemp.X -20, _pointtemp.Y - 20, 40, 40);
+                   // g.DrawRectangle(Pens.Red, _pointtemp.X, _pointtemp.Y, 1, 1);
+                   
+=======
                 {
                     g.FillEllipse(Brushes.Gray, _pointtemp.X - 20, _pointtemp.Y - 20, 40, 40);
+<<<<<<< Updated upstream
+=======
+>>>>>>> 5a1105c734ba0c2157ff68e3c6338f3a769d8d3e
+>>>>>>> Stashed changes
                     _pointtemp = x.cord;
                    
                 }
