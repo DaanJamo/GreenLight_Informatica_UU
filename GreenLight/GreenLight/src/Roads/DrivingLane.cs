@@ -53,36 +53,26 @@ namespace GreenLight
                 _pointsarray[t] = x.cord;
                 t++;
             }
-            
+
             //g.DrawArc(p, _pointtemp.X, _pointtemp.Y - 20, Math.Abs(_pointtemp.X - x.cord.X), 40, 0, x.degree);
             //g.DrawCurve(p, _pointsarray);
 
             try
-                {
+            {
                 Point _pointtemp = points[0].cord;
 
                 foreach (LanePoints x in points)
-<<<<<<< HEAD
-            {
+                {
                     //g.DrawRectangle(Pens.Black, _pointtemp.X, _pointtemp.Y - 20, Math.Abs(_pointtemp.X - x.cord.X), 40);
                     g.DrawImage(Lane, _pointtemp.X, _pointtemp.Y - 20, Math.Abs(_pointtemp.X - x.cord.X), 40);
-                    
+                    g.FillEllipse(Brushes.Gray, _pointtemp.X - 20, _pointtemp.Y - 20, 40, 40);
                     //g.DrawLine(Pens.Red, _pointtemp, x.cord);
                     // g.FillEllipse(Brushes.Gray, _pointtemp.X -20, _pointtemp.Y - 20, 40, 40);
-                   // g.DrawRectangle(Pens.Red, _pointtemp.X, _pointtemp.Y, 1, 1);
-                   
-=======
-                {
-                    g.FillEllipse(Brushes.Gray, _pointtemp.X - 20, _pointtemp.Y - 20, 40, 40);
-<<<<<<< Updated upstream
-=======
->>>>>>> 5a1105c734ba0c2157ff68e3c6338f3a769d8d3e
->>>>>>> Stashed changes
+                    // g.DrawRectangle(Pens.Red, _pointtemp.X, _pointtemp.Y, 1, 1);
                     _pointtemp = x.cord;
-                   
                 }
             }
-           catch(Exception e) { }
+            catch (Exception e) { }
         }
 
         public static Bitmap RotateImage(Bitmap b, float angle)
