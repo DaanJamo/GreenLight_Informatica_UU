@@ -29,7 +29,7 @@ namespace GreenLight
             }
         }
 
-        protected override DrivingLane CalculateDrivingLane(Point _point1, Point _point2)
+        protected override DrivingLane CalculateDrivingLane(Point _point1, Point _point2, int _thisLane)
         {
             Console.WriteLine("{0} --- {1}", _point1, _point2);
             
@@ -110,7 +110,7 @@ namespace GreenLight
                 Console.WriteLine(x.ToString());
             }
 
-            return new DrivingLane(_lanePoints, this.dir);
+            return new DrivingLane(_lanePoints, this.dir, lanes, _thisLane);
         }
 
         private Tuple<int, int> GetDirection(Point _point1, Point _point2)
@@ -206,7 +206,7 @@ namespace GreenLight
 
             Console.WriteLine("STARTPOINTS : {0} -- {1}", _firstPoint, _secondPoint);
 
-                return CalculateDrivingLane(_firstPoint, _secondPoint);
+                return CalculateDrivingLane(_firstPoint, _secondPoint, t);
             }
         
     }
