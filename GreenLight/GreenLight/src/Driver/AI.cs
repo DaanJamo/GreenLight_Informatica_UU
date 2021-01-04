@@ -25,6 +25,7 @@ namespace GreenLight
         Thread moveVehicle;
         public int targetspeed;
         Point destinationpoint = new Point(4000, 980); //Ingegeven door road?
+        Point endpoint; //Definitief eindpunt auto?
 		int framesbuffered = 625;
         public List<Point> location = new List<Point>();
         public List<Point> location2 = new List<Point>();
@@ -45,12 +46,6 @@ namespace GreenLight
             //thread used to update vehicle speed and whereabouts in the single threaded car system
             moveVehicle = new Thread(vehiclemovement);
             moveVehicle.Start();
-            
-            //thread used to test the AI in the multi threaded car system
-            /*run = new Thread(test);*/
-            /*run.Start();*/
-
-
         }
 
         //method used to drive the vehicle in the single threaded car System;

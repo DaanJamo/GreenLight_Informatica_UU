@@ -26,6 +26,8 @@ namespace GreenLight
             AbstractRoad _road = new StraightRoad(_point1, _point2, 1, _dir);
 
             roads.Add(_road);
+            originPoints.Add(new VehicleOriginPoint(_point1));
+            originPoints.Add(new VehicleOriginPoint(_point2));
         }
 
         public void BuildDiagnolRoad(Point _point1, Point _point2)
@@ -34,6 +36,8 @@ namespace GreenLight
             AbstractRoad _road = new DiagonalRoad(_point1, _point2, 3, _dir);
 
             roads.Add(_road);
+            originPoints.Add(new VehicleOriginPoint(_point1));
+            originPoints.Add(new VehicleOriginPoint(_point2));
         }
 
         public void BuildCurvedRoad(Point _point1, Point _point2)

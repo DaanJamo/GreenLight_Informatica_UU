@@ -72,7 +72,5 @@ namespace GreenLight
             string _temp = point1.ToString() + " - " + point2.ToString();
             return _temp;
         }
-
-
     }
 }

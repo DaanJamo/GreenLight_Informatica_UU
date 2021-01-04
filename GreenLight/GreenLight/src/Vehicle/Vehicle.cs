@@ -70,7 +70,6 @@ namespace GreenLight
             a = this.motorpwr / this.weight;
             abrake = physics.Brakepwr / this.weight;
             Car = new Bitmap(Properties.Resources.Car);
-
         }
 
         public float Slipperiness {

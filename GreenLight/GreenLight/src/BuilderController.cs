@@ -42,7 +42,6 @@ namespace GreenLight
                 case "X":
                     break;
             }
-
             Screen.Invalidate();
         }
     }
