@@ -44,21 +44,21 @@ namespace GreenLight
             this.Controls.Add(Max_speed_Value);
             Max_speed.ValueChanged += (object o, EventArgs EA) => { Max_speed_Value.Text = Max_speed.Value.ToString() + " km/h"; };
 
-            Slider Length = new Slider(new Point(25, 320), 3, 12);
+            Slider Length = new Slider(new Point(25, 320), 30, 120);
             this.Controls.Add(Length);
             SliderText Length_label = new SliderText(Dosis_font_family, new Point(25, 300), "Length:");
             this.Controls.Add(Length_label);
-            SliderText Length_Value = new SliderText(Dosis_font_family, new Point(125, 300), Length.Value.ToString() + " m");
+            SliderText Length_Value = new SliderText(Dosis_font_family, new Point(125, 300), (Length.Value / 10).ToString() + " m");
             this.Controls.Add(Length_Value);
-            Length.ValueChanged += (object o, EventArgs EA) => { Length_Value.Text = Length.Value.ToString() + " m"; };
+            Length.ValueChanged += (object o, EventArgs EA) => { Length_Value.Text = (((double)(Length.Value)) / 10).ToString() + " m"; };
 
-            Slider Acceleration = new Slider(new Point(25, 280), 2, 5);
+            Slider Acceleration = new Slider(new Point(25, 280), 20, 50);
             this.Controls.Add(Acceleration);
             SliderText Acceleration_label = new SliderText(Dosis_font_family, new Point(25, 260), "Acceleration:");
             this.Controls.Add(Acceleration_label);
-            SliderText Acceleration_Value = new SliderText(Dosis_font_family, new Point(125, 260), Acceleration.Value.ToString() + " m/s^2");
+            SliderText Acceleration_Value = new SliderText(Dosis_font_family, new Point(125, 260), (Acceleration.Value / 10).ToString() + " m/s^2");
             this.Controls.Add(Acceleration_Value);
-            Acceleration.ValueChanged += (object o, EventArgs EA) => { Acceleration_Value.Text = Acceleration.Value.ToString() + " m/s^2"; };
+            Acceleration.ValueChanged += (object o, EventArgs EA) => { Acceleration_Value.Text = (((double)(Acceleration.Value)) / 10).ToString() + " m/s^2"; };
 
             Slider Weight = new Slider(new Point(25, 240), 0, 40000);
             this.Controls.Add(Weight);

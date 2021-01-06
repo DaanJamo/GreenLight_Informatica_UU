@@ -38,17 +38,17 @@ namespace GreenLight
             this.Controls.Add(Reaction_time);
             SliderText Reaction_time_label = new SliderText(Dosis_font_family, new Point(25, 340), "Reaction time:");
             this.Controls.Add(Reaction_time_label);
-            SliderText Reaction_time_Value = new SliderText(Dosis_font_family, new Point(125, 340), Reaction_time.Value.ToString() + " s");
+            SliderText Reaction_time_Value = new SliderText(Dosis_font_family, new Point(125, 340), (Reaction_time.Value / 10).ToString() + " s");
             this.Controls.Add(Reaction_time_Value);
-            Reaction_time.ValueChanged += (object o, EventArgs EA) => { Reaction_time_Value.Text = Reaction_time.Value.ToString() + " s"; };
+            Reaction_time.ValueChanged += (object o, EventArgs EA) => { Reaction_time_Value.Text = (((double)(Reaction_time.Value))/10).ToString() + " s"; };
 
             Slider Follow_interval = new Slider(new Point(25, 320), 0, 100);
             this.Controls.Add(Follow_interval);
             SliderText Follow_interval_label = new SliderText(Dosis_font_family, new Point(25, 300), "Follow interval:");
             this.Controls.Add(Follow_interval_label);
-            SliderText Follow_interval_Value = new SliderText(Dosis_font_family, new Point(125, 300), Follow_interval.Value.ToString() + " s");
+            SliderText Follow_interval_Value = new SliderText(Dosis_font_family, new Point(125, 300), (Follow_interval.Value / 10).ToString() + " s");
             this.Controls.Add(Follow_interval_Value);
-            Follow_interval.ValueChanged += (object o, EventArgs EA) => { Follow_interval_Value.Text = Follow_interval.Value.ToString() + " s"; };
+            Follow_interval.ValueChanged += (object o, EventArgs EA) => { Follow_interval_Value.Text = (((double)(Follow_interval.Value)) / 10).ToString() + " s"; };
 
             Slider Speeding = new Slider(new Point(25, 280), -50, 100);
             this.Controls.Add(Speeding);
