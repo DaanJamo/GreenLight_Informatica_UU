@@ -9,7 +9,7 @@ using System.IO;
 
 namespace GreenLight
 {
-    public class AIController : EntityController
+    class AIController : EntityController
     {
         public List<AI> driverlist = new List<AI>();
         private static List<DriverStats> drivertypes = new List<DriverStats>();
@@ -24,27 +24,17 @@ namespace GreenLight
 
         }
 
-        public void AddDriver(int _x, int _y)
-        {
-            //Hier dingen die waardes van menu halen ofzo, of bereken voor welke stats etc.
-
-            DriverStats _stats = getDriverStats();
-            Vehicle _vehicle = General_Form.Main.SimulationScreen.Simulator.vehicleController.getVehicle(_x,_y);
-
-            driverlist.Add(new AI(_vehicle, _stats));
-            
-        }
-
-        public DriverStats getDriverStats(DriverStats _stats = null)
+        public void AddDriver(Vehicle v, DriverStats _stats = null)
         {
             if (_stats == null)
             {
-                Random ran = new Random();
-                int _index = ran.Next(0, drivertypes.Count() - 1);
-                _stats = drivertypes[_index];
+                _stats = getRandomStats();
             }
+        }
 
-            return _stats;
+        private DriverStats getRandomStats()
+        {
+            return null;
         }
 
         static private void initDriverStats()

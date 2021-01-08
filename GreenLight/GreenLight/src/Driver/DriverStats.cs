@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GreenLight
 {
-    public class DriverStats
+    class DriverStats
     {
         public string Name;
         public float ReactionTime;
@@ -21,10 +21,6 @@ namespace GreenLight
             this.FollowInterval = FollowInterval;
             this.SpeedRelativeToLimit = SpeedRelativeToLimit;
             this.RuleBreakingChance = RuleBreakingChance;
-
-            Console.WriteLine("Constructed DriverStat");
-
         }
-
     }
 }

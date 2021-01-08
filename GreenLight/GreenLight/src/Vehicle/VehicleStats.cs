@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GreenLight
 {
-    public class VehicleStats
+    class VehicleStats
     {
         public string Name;
         public int Weight;
@@ -25,8 +25,6 @@ namespace GreenLight
             this.Motorpwr = Motorpwr;
             this.Surface = Surface;
             this.Cw = Cw;
-
-            Console.WriteLine("Constructed!");
         }
     }
 }

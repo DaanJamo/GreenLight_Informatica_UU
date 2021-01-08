@@ -17,17 +17,9 @@ namespace GreenLight
         public Rectangle Hitbox;
         public Point Cords;
 
-        public ScreenObject(Point _p1, Point _p2)
+        public ScreenObject(Point _p1, Size _s)
         {
-            int left, top, right, bottom;
-
-            left = Math.Min(_p1.X, _p2.X);
-            right = Math.Max(_p1.X, _p2.X);
-
-            top = Math.Min(_p1.Y, _p2.Y);
-            bottom = Math.Max(_p1.Y, _p2.Y);
-
-            Hitbox = Rectangle.FromLTRB(left, top, right, bottom);
+            this.Hitbox = new Rectangle(_p1, _s);
         }
 
         public virtual void Draw(Graphics g)
@@ -35,6 +27,4 @@ namespace GreenLight
 
         }
     }
-
-    
 }
