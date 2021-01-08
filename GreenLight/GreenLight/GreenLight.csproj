@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Selection_box.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="src\Driver\DriverStats.cs" />
     <Compile Include="src\UserControls\Simulation_data_menu.cs">
